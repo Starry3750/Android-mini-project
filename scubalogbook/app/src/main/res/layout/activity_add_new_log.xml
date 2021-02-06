@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible"
+    tools:context=".AddNewLog"
+    tools:visibility="visible">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="276dp"
+        tools:layout_editor_absoluteY="161dp">
+
+        <TextView
+            android:id="@+id/title1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="신규 로그북 작성"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/subtitle1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="다이빙 날짜"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="84dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/diving_date_select_result"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical|center"
+                android:hint="날짜를 선택해 주세요"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/diving_date_select_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="#2196F3"
+                android:fontFamily="@font/malgun"
+                android:onClick="showDatePicker"
+                android:text="날짜 선택"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/subtitle2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="차수"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:id="@+id/diving_round"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <RadioButton
+                android:id="@+id/first_diving_rbtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="1 차" />
+
+            <RadioButton
+                android:id="@+id/second_diving_rbtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="2 차" />
+
+            <RadioButton
+                android:id="@+id/third_diving_rbtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="3 차" />
+
+            <RadioButton
+                android:id="@+id/night_diving_rbtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Night" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/subtitle3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="위치 정보 입력"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
