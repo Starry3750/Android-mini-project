@@ -23,6 +23,7 @@ public class AddNewLog extends AppCompatActivity {
 
     }
 
+
     // 달력 관련 코드
     public void showDatePicker(View view) {
         DialogFragment newFragment = new DatePickerFragment();
