@@ -1,12 +1,17 @@
 package com.example.scuba_logbook;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.DialogFragment;
 
+import android.Manifest;
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -19,8 +24,10 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.pedro.library.AutoPermissions;
+import com.pedro.library.AutoPermissionsListener;
 
-public class AddNewLog extends AppCompatActivity {
+public class AddNewLog extends AppCompatActivity implements AutoPermissionsListener {
 
     SupportMapFragment mapFragment;
     GoogleMap map;
@@ -29,6 +36,9 @@ public class AddNewLog extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_new_log);
+
+        // Location Auto Permission
+        AutoPermissions.Companion.loadAllPermissions(this, 101);
 
         // Google Map
         mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
@@ -64,6 +74,22 @@ public class AddNewLog extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        AutoPermissions.Companion.parsePermissions(this, requestCode, permissions,this);
+    }
+
+    @Override
+    public void onDenied(int i, @NonNull String[] permissions) {
+        Toast.makeText(this, "permissions denied : " + permissions.length, Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onGranted(int i, @NonNull String[] permissions) {
+        Toast.makeText(this, "permissions granted : " + permissions.length, Toast.LENGTH_LONG).show();
+    }
 
     // 달력 관련 코드
     public void showDatePicker(View view) {
@@ -88,7 +114,7 @@ public class AddNewLog extends AppCompatActivity {
             RadioGroup radioGroup = (RadioGroup) findViewById(R.id.diving_round);
             int RadioId = radioGroup.getCheckedRadioButtonId(); // 체크된 라디오버튼의 ID 리턴
             RadioButton radioButton = (RadioButton) findViewById(RadioId);
-            Toast.makeText(AddNewLog.this, radioButton.getText().toString() + " 다이빙 선택 완료", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(AddNewLog.this, radioButton.getText().toString() + " 다이빙 선택 완료", Toast.LENGTH_SHORT).show();
         }
     };
 
