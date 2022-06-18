@@ -128,28 +128,6 @@ public class AddNewLog extends AppCompatActivity implements AutoPermissionsListe
         map.animateCamera(CameraUpdateFactory.zoomTo(15));
     }
 
-    /*
-    private Location getLocationFromAddress(Context context, String address){
-        Geocoder geocoder = new Geocoder(context);
-        List<Address> addresses;
-        Location resLocation = new Location("");
-        try {
-            addresses = geocoder.getFromLocationName(address, 5);
-            if((addresses == null) || (addresses.size() == 0)) {
-                return null;
-            }
-            Address addressLoc = addresses.get(0);
-
-            resLocation.setLatitude(addressLoc.getLatitude());
-            resLocation.setLongitude(addressLoc.getLongitude());
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return resLocation;
-    }
-     */
-
     // AutoPermission 관련
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
