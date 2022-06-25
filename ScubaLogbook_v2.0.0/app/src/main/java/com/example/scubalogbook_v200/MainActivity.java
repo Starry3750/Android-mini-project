@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
                                 0,
                                 finalRadius);
 
-
                 animator.setInterpolator(new AccelerateDecelerateInterpolator());   // Interpolator for giving effect to animation
                 animator.setDuration(500);                                          // Duration of the animation
 

@@ -13,9 +13,10 @@
         android:layout_height="205dp"
         android:background="@drawable/ripple_effect"
         android:clickable="true"
+        android:focusable="true"
         android:text="DIVE"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -25,18 +26,16 @@
 
     <FrameLayout
         android:id="@+id/reveal_layout"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/seablue"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
+        android:visibility="invisible">
     </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
     <!--
             android:foreground="?attr/selectableItemBackground"

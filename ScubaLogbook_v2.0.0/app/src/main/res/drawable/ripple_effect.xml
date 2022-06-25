@@ -13,10 +13,7 @@
     <item android:id="@android:id/background">
         <shape android:shape="oval">
             <solid
-                android:color="@color/seablue" />
-            <stroke
-            android:width="5dp"
-            android:color="@color/deepseablue" />
+                android:color="#0F2D6E" />
         </shape>
     </item>
 </ripple>
