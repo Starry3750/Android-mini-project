@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@android:color/darker_gray">
+
+    <!-- Ripple effect Mask -->
+    <item android:id="@android:id/mask">
+        <shape android:shape="oval">
+            <solid android:color="@android:color/darker_gray" />
+        </shape>
+    </item>
+
+    <!-- 버튼의 디자인 -->
+    <item android:id="@android:id/background">
+        <shape android:shape="oval">
+            <solid
+                android:color="@color/seablue" />
+            <stroke
+            android:width="5dp"
+            android:color="@color/deepseablue" />
+        </shape>
+    </item>
+</ripple>

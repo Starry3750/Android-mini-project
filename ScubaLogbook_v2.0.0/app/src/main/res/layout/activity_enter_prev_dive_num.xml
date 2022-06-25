@@ -44,7 +44,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@color/design_default_color_background"
+                    android:background="@color/white"
                     android:text="1"
                     android:textColor="#0080ff"
                     android:textSize="30dp" />
